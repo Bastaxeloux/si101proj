@@ -20,7 +20,7 @@ def decode(audio):
     message = ''
     while len(audio)>499:
         x=audio[:2000]
-        if np.all(x==0):
+        if np.all(int(x)==0):
             message+=' '
         else:
             new_x = np.concatenate((x, np.zeros(8000*(2**precision)-len(x))))
